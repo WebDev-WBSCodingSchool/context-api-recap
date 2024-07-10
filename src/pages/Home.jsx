@@ -1,20 +1,25 @@
+import { useContext } from 'react';
+import { LocalisationContext } from '@/context';
+
 const Home = () => {
+  const { language, setLanguage, translations } = useContext(LocalisationContext);
+
+  const handleChange = event => setLanguage(event.target.value);
+
   return (
     <>
+      <select value={language} onChange={handleChange}>
+        <option value='sp'>Español</option>
+        <option value='en'>English</option>
+        <option value='de'>Deutsch</option>
+      </select>
       <section>
-        <h1 className='text-center text-4xl my-5'>Brew Better, Live Better</h1>
+        <h1 className='text-center text-4xl my-5'>{translations[language].title}</h1>
         <img src='/cover.jpg' alt='Barista pouring latte art' className='rounded-2xl' />
       </section>
       <section>
-        <h2 className='text-center text-2xl my-5'>Welcome to Coffee &amp; Co</h2>
-        <p>
-          At Coffee &amp; Co, we believe that great coffee is more than just a beverage — it&amp;s a
-          way of life. We&amp;re passionate about bringing the finest coffee experience to your home
-          or office. Our selection of premium coffee beans, top-tier machines, and essential filters
-          ensures every cup you brew is perfect. Whether you&amp;re a novice or a seasoned barista,
-          our expert courses are designed to elevate your coffee-making skills. Join us at Coffee
-          &amp; Co and discover how to brew better and live better, one cup at a time.
-        </p>
+        <h2 className='text-center text-2xl my-5'>{translations[language].about.title}</h2>
+        <p>{translations[language].about.content}</p>
       </section>
       <section>
         <h2 className='text-center text-2xl my-5'>Good coffee matters</h2>

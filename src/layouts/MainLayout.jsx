@@ -1,3 +1,5 @@
+import { CartProvider } from '@/context';
+import LocalisationProvider from '@/context/LocalisationProvider';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
@@ -50,7 +52,11 @@ const MainLayout = () => {
         </div>
       </header>
       <main className='container mx-auto'>
-        <Outlet />
+        <LocalisationProvider>
+          <CartProvider>
+            <Outlet />
+          </CartProvider>
+        </LocalisationProvider>
       </main>
     </>
   );
