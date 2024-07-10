@@ -7,7 +7,7 @@ const MainLayout = () => {
         <div className='container mx-auto navbar'>
           <div className='flex-1'>
             <Link to='/' className='btn btn-ghost text-xl'>
-              CCoffee Haven{' '}
+              Coffee &amp; Co
               <span role='img' aria-label='coffee'>
                 ☕
               </span>
