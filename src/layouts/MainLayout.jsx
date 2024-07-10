@@ -1,5 +1,4 @@
-import { CartProvider } from '@/context';
-import LocalisationProvider from '@/context/LocalisationProvider';
+import { CartProvider, LocalisationProvider } from '@/context';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
