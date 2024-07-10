@@ -1,4 +1,4 @@
-import { addToCart, removeFromCart } from '@/utils/cartUtils';
+import { addToCart, formatCurrency, removeFromCart } from '@/utils/cartUtils';
 
 const ProductCard = ({ cart, product, setCart }) => {
   const productInCart = cart.find(p => p.id === product.id);
@@ -10,7 +10,7 @@ const ProductCard = ({ cart, product, setCart }) => {
       </figure>
       <div className='card-body'>
         <h2 className='card-title truncate'>{product.title}</h2>
-        <p>{product.price} &euro; </p>
+        <p>{formatCurrency(product.price)} </p>
         <div className='card-actions justify-end items-center'>
           {productInCart ? (
             <>
