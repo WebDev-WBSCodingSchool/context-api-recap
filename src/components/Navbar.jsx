@@ -9,7 +9,10 @@ const Navbar = () => {
 
   const itemsInCart = cart.reduce((acc, item) => acc + item.quantity, 0);
 
-  const handleChange = event => setLanguage(event.target.value);
+  const handleChange = event => {
+    localStorage.setItem('language', event.target.value);
+    setLanguage(event.target.value);
+  };
 
   return (
     <header className='bg-base-300'>

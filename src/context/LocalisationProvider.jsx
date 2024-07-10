@@ -4,7 +4,7 @@ import translations from './translations';
 export const LocalisationContext = createContext();
 
 const LocalisationProvider = ({ children }) => {
-  const [language, setLanguage] = useState('sp');
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
 
   return (
     <LocalisationContext.Provider value={{ language, setLanguage, translations }}>
