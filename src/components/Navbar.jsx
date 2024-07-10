@@ -1,6 +1,12 @@
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { LocalisationContext } from '@/context';
 
 const Navbar = () => {
+  const { language, setLanguage } = useContext(LocalisationContext);
+
+  const handleChange = event => setLanguage(event.target.value);
+
   return (
     <header className='bg-base-300'>
       <div className='container mx-auto navbar'>
@@ -44,6 +50,11 @@ const Navbar = () => {
             <li>
               <NavLink to='/user'>User</NavLink>
             </li>
+            <select value={language} onChange={handleChange} className='select'>
+              <option value='sp'>Español</option>
+              <option value='en'>English</option>
+              <option value='de'>Deutsch</option>
+            </select>
           </ul>
         </nav>
       </div>
