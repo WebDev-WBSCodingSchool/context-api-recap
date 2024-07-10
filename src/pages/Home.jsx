@@ -3,7 +3,7 @@ const Home = () => {
     <>
       <section>
         <h1 className='text-center text-4xl my-5'>Brew Better, Live Better</h1>
-        <img src='/cover.jpg' alt='Barista pouring latte art' />
+        <img src='/cover.jpg' alt='Barista pouring latte art' className='rounded-2xl' />
       </section>
       <section>
         <h2 className='text-center text-2xl my-5'>Welcome to Coffee &amp; Co</h2>
